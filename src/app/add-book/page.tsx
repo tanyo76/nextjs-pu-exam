@@ -54,7 +54,6 @@ export default function AddBookPage() {
               so
             </option>
             <option value="Reading">Reading....</option>
-            <option value="test">Test</option>
             <option value="Has been read">Has been read</option>
           </select>
           {state.errors?.readingStatus && (
