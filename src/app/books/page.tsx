@@ -25,9 +25,14 @@ export default async function Books() {
   return (
     <section>
       <PageHeading text="Books" />
-      {books.map((book) => (
-        <BookCard book={book} key={book.id} />
-      ))}
+
+      <div className="flex flex-wrap justify-center gap-6">
+        {books.map((book) => (
+          <div key={book.id} className="w-full sm:w-80">
+            <BookCard book={book}/>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { addBook } from "@/actions/books/actions";
+import Link from "next/link";
 import { useActionState } from "react";
 
 export default function AddBookPage() {
@@ -67,7 +68,12 @@ export default function AddBookPage() {
           {pending ? "Adding..." : "Add book"}
         </button>
 
-        {state.ok && <p className="text-green-700 text-sm">Success</p>}
+        {state.ok && (
+          <div>
+            <p className="text-green-700 text-sm">Success</p>
+            <Link href="/books">Go to books</Link>
+          </div>
+        )}
       </form>
     </section>
   );
