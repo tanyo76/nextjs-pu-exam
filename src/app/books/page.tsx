@@ -8,12 +8,15 @@ export const metadata: Metadata = {
   description: "Showcases all the blog articles",
 };
 
+type ReadingStatus = "Reading" | "Has been read";
+
 export type Book = {
   id: string;
   title: string;
   description: string;
   author: string;
   publishDate: string;
+  readingStatus: ReadingStatus;
 };
 
 export default async function Books() {

@@ -3,16 +3,16 @@ import Link from "next/link";
 
 
 export const metadata: Metadata = {
-  title: "Book not found",
+  title: "Page not found",
 };
 
-const BookNotFound = () => {
+const RootNotFound = () => {
   return (
-    <div className="border w-full h-full flex justify-center flex-col text-center">
-      <h1>Book cannot be found!</h1>
+    <div className="w-full h-full flex justify-center flex-col text-center">
+      <h1>404!Page was not found!</h1>
       <Link href="/books" className="hover:underline">Go to books</Link>
     </div>
   );
 };
 
-export default BookNotFound;
+export default RootNotFound;

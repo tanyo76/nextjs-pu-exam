@@ -1,28 +1,35 @@
 import { getBookById } from "@/actions/books/actions";
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Article",
-  description: "Individual blog article",
-};
 
 type BookInfoPageParams = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-export default async function BookInfoPage({ params }: BookInfoPageParams) {
-  const { id } = params;
-
+export async function generateMetadata({ params }: BookInfoPageParams) {
+  const { id } = await params;
   const book = await getBookById(id);
 
-  if(!book) {
+  if (!book) {
     notFound();
   }
 
-  
+  return {
+    title: book.title,
+  };
+}
+
+export default async function BookInfoPage({ params }: BookInfoPageParams) {
+  const { id } = await params;
+
+  const book = await getBookById(id);
+
+  if (!book) {
+    notFound();
+  }
+
   return (
     <section>
       <h1>Book info</h1>
