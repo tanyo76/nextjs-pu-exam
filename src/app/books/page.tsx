@@ -26,7 +26,7 @@ export default async function Books() {
     <section>
       <PageHeading text="Books" />
 
-      <div className="flex flex-wrap justify-center gap-6">
+      <div className="flex flex-wrap justify-center gap-6 mx-2">
         {books.map((book) => (
           <div key={book.id} className="w-full sm:w-80">
             <BookCard book={book}/>

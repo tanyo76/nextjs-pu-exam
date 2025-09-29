@@ -23,7 +23,7 @@ export async function removeBook(bookId: string): Promise<void> {
   const filePath = path.join(process.cwd(), "/src/data", "books.json");
   const text = await fs.readFile(filePath, "utf8");
   const books = JSON.parse(text) as [];
-  const newBooksArray = books.filter((book: Book) => book.id == bookId);
+  const newBooksArray = books.filter((book: Book) => book.id !== bookId);
   await fs.writeFile(filePath, JSON.stringify(newBooksArray), "utf-8");
 
   revalidatePath("/books");
