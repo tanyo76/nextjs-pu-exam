@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Showcases all the blog articles",
 };
 
-type ReadingStatus = "Reading" | "Has been read";
+export type ReadingStatus = "Reading" | "Not started" | "Completed";
 
 export type Book = {
   id: string;

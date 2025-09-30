@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 const BookNotFound = () => {
   return (
-    <div className="border w-full h-full flex justify-center flex-col text-center">
-      <h1>Book cannot be found!</h1>
+    <div className="w-full flex justify-center flex-col text-center h-[80vh]">
+      <h1 className="text-3xl mb-4">Book cannot be found!</h1>
       <Link href="/books" className="hover:underline">Go to books</Link>
     </div>
   );

@@ -17,8 +17,6 @@ const BookCard = ({ book }: BookCardProps) => {
         </Link>
       </h3>
 
-      <p className="text-sm text-gray-600 line-clamp-3">{description}</p>
-
       <div className="flex flex-col pt-3 pb-3 text-sm text-gray-500">
         <span className="truncate">Author: {author}</span>
         <time className="shrink-0">Published: {publishDate}</time>
